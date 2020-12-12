@@ -20,7 +20,7 @@ const AddBoat = () => {
   }, []);
 
   const onFinish = (values) => {
-    const { year, model, make, price } = values;
+    const { year, model, make, price, personId } = values;
 
     addBoat({
       variables: {
@@ -88,6 +88,12 @@ const AddBoat = () => {
         rules={[{ required: true, message: "Please input price!" }]}
       >
         <Input placeholder="i.e. 2000" />
+      </Form.Item>
+      <Form.Item
+        name="personId"
+        rules={[{ required: true, message: "Please input personId!" }]}
+      >
+        <Input placeholder="i.e. 2" />
       </Form.Item>
       <Form.Item shouldUpdate={true}>
         {() => (

@@ -90,7 +90,7 @@ export const UPDATE_BOAT = gql`
     $price: String!
     $personId: String!
   ) {
-    updatePerson(
+    updateBoat(
       id: $id
       year: $year
       make: $make

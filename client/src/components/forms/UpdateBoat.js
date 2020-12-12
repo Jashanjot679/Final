@@ -11,6 +11,8 @@ const UpdateBoat = (props) => {
   const [price, setPrice] = useState(props.price);
   const [personId, setPersonId] = useState(props.personId);
 
+  const [updateBoat] = useMutation(UPDATE_BOAT);
+
   const [form] = Form.useForm();
   const [, forceUpdate] = useState();
 
@@ -57,7 +59,7 @@ const UpdateBoat = (props) => {
         break;
       case "make":
         props.updateStateVariable("make", value);
-        setMake(value);
+        setmake(value);
         break;
       case "price":
         props.updateStateVariable("price", value);
@@ -75,7 +77,7 @@ const UpdateBoat = (props) => {
   return (
     <Form
       form={form}
-      name="update-person-form"
+      name="update-boat-form"
       layout="inline"
       onFinish={onFinish}
       initialValues={{
@@ -114,7 +116,7 @@ const UpdateBoat = (props) => {
         rules={[{ required: true, message: "Please input make" }]}
       >
         <Input
-          placeholder="i.e. Yamin"
+          placeholder="i.e. Yamaha"
           onChange={(e) => updateStateVariable("make", e.target.value)}
         />
       </Form.Item>
@@ -130,7 +132,7 @@ const UpdateBoat = (props) => {
       </Form.Item>
       <Form.Item
         name="personId"
-        label="personId"
+        label="PersonId"
         rules={[{ required: true, message: "Please input personId!" }]}
       >
         <Input
@@ -152,7 +154,7 @@ const UpdateBoat = (props) => {
               form.getFieldsError().filter(({ errors }) => errors.length).length
             }
           >
-            Update Person
+            Update Boat
           </Button>
         )}
       </Form.Item>
